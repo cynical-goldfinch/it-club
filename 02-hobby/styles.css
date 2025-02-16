@@ -1,0 +1,170 @@
+body {
+    font-family: Tahoma, Verdana, sans-serif;
+    background-attachment: fixed;
+
+    /* Simple background */
+    background-color: antiquewhite;
+
+    /* Crescent background */
+    /* --colorBg: #f0b7be;
+    --colorCrescent: white;
+    --innerDiameter: 80px;
+    --innerOffset: 10px;
+    --gradientOuter: radial-gradient(var(--colorCrescent) 35%, #0000 36%);
+    --gradientInner: radial-gradient(var(--colorBg) 25%, #0000 26%);
+    background:
+        var(--gradientInner),
+        var(--gradientInner),
+        var(--gradientOuter),
+        var(--gradientOuter);
+    background-position:
+        var(--innerOffset) var(--innerOffset),
+        calc(var(--innerDiameter) + var(--innerOffset)) calc(var(--innerDiameter) + var(--innerOffset)),
+        0 0,
+        var(--innerDiameter) var(--innerDiameter);
+    background-size: calc(2*var(--innerDiameter)) calc(2*var(--innerDiameter));
+    background-color: var(--colorBg); */
+}
+
+.page-content {
+    width: 80%;
+    max-width: 800px;
+    min-width: 680px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    border-radius: 8px;
+    margin: auto;
+    position: relative;
+}
+
+h1 {
+    font-size: 3em;
+    margin-bottom: 0.1em;
+    margin-top: 0;
+}
+
+.subtitle {
+    font-size: 2em;
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 0.67em;
+    line-height: 1.2;
+}
+
+img.illustration {
+    border-style: solid;
+    border-width: 4px;
+    border-color: #ffaa89;
+    border-radius: 6px;
+}
+
+ul.characters {
+    padding-inline-start: 0px;
+}
+
+ul.characters li {
+    padding: 0px 0px 0px 40px;
+    vertical-align: middle;
+    min-height: 50px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: left;
+    align-items: center;
+    max-width: min-content;
+    white-space: nowrap;
+    list-style-type: none;
+}
+
+li.sailor-moon {
+    background: url("./images/sailor-moon-front.png") no-repeat 14px center;
+}
+
+li.sailor-moon:hover {
+    background: url("./images/sailor-moon-oshioki.png") no-repeat 10px center;
+}
+
+li.sailor-mercury {
+    background: url("./images/sailor-mercury-front.png") no-repeat 14px center;
+}
+
+li.sailor-mercury:hover {
+    background: url("./images/sailor-mercury-shy.png") no-repeat 14px center;
+}
+
+li.sailor-mars {
+    background: url("./images/sailor-mars-front.png") no-repeat 14px center;
+}
+
+li.sailor-mars:hover {
+    background: url("./images/sailor-mars-angry.png") no-repeat 8px center;
+}
+
+li.sailor-jupiter {
+    background: url("./images/sailor-jupiter-front.png") no-repeat 14px center;
+}
+
+li.sailor-jupiter:hover {
+    background: url("./images/sailor-jupiter-kick.png") no-repeat 0px center;
+}
+
+li.sailor-venus {
+    background: url("./images/sailor-venus-front.png") no-repeat 14px center;
+}
+
+li.sailor-venus:hover {
+    background: url("./images/sailor-venus-beauty.png") no-repeat 16px center;
+}
+
+li.sailor-pluto {
+    background: url("./images/sailor-pluto-rod-front.png") no-repeat 8px center;
+}
+
+li.sailor-pluto:hover {
+    background: url("./images/sailor-pluto-rod-ready.png") no-repeat 0px center;
+}
+
+li.sailor-uranus {
+    background: url("./images/sailor-uranus-front.png") no-repeat 14px center;
+}
+
+li.sailor-uranus:hover {
+    background: url("./images/sailor-uranus-defend.png") no-repeat 6px center;
+}
+
+li.sailor-neptune {
+    background: url("./images/sailor-neptune-front.png") no-repeat 14px center;
+}
+
+li.sailor-neptune:hover {
+    background: url("./images/sailor-neptune-beauty.png") no-repeat 12px center;
+}
+
+li.sailor-saturn {
+    background: url("./images/sailor-saturn-glaive-front.png") no-repeat 11px center;
+}
+
+li.sailor-saturn:hover {
+    background: url("./images/sailor-saturn-glaive-energy.png") no-repeat 4px center;
+}
+
+li.tuxedo-kamen {
+    background: url("./images/tuxedo-kamen-front.png") no-repeat 14px center;
+}
+
+li.tuxedo-kamen:hover {
+    background: url("./images/tuxedo-kamen-action.png") no-repeat 12px center;
+}
+
+.original {
+    color: #888;
+    margin-left: 6px;
+    font-size: 0.9em;
+}
+
+.mascot {
+    position: absolute;
+    right: 20px;
+    bottom: 10px;
+}
