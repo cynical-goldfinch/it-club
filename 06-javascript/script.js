@@ -17,7 +17,6 @@ const radius = 20;
 let positionX = 0;
 let positionY = radius;
 let row = 0;
-let column = 0;
 
 console.log('canvasWidth', canvasWidth, 'canvasHeight', canvasHeight);
 
@@ -28,10 +27,8 @@ while (positionY - radius < canvasHeight) {
 
         drawCircle(positionX, positionY, radius);
         positionX += radius * 2;
-        column++;
     }
     positionY += radius * 2;
     positionX = radius * (1 - row % 2);
-    column = 0;
     row++;
 }
