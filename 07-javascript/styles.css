@@ -1,0 +1,11 @@
+:root {
+    --logo-radius: 50px;
+}
+
+.logo {
+    width: calc(var(--logo-radius) * 2);
+    height: calc(var(--logo-radius) * 2);
+    border-radius: var(--logo-radius);
+    position: absolute;
+    background-color: hsl(0, 70%, 70%);
+}
