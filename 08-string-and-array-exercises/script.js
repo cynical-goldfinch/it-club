@@ -27,7 +27,6 @@ const log = (...data) => {
         if (Array.isArray(loggedElement)) {
             div.textContent = JSON.stringify(loggedElement).replaceAll(',', ', ');
         } else {
-
             div.textContent = JSON.stringify(loggedElement);
         }
         li.appendChild(div);
@@ -119,7 +118,14 @@ const exercise7 = () => {
 const exercise8 = () => {
     const process = input => {
         log('Исходный массив', input);
-        const output = input.filter(element => element.toString().replace('.', '').length < 3);
+        const output = input.filter(
+            element =>
+                element
+                    .toString()
+                    .replace('.', '')
+                    .length
+                < 3
+        );
         log('Только элементы, у которых меньше 3 цифр', output);
     }
     process([12, 3456, 78, 90, 1234, 56]);
@@ -229,6 +235,7 @@ const exercise14 = () => {
         if (number == 0) {
             return [];
         }
+
         if (number < 2) {
             return [number];
         }
@@ -291,7 +298,7 @@ const exercise16 = () => {
             next: toWeekdayString(tomorrow),
             curr: toWeekdayString(today),
             prev: toWeekdayString(yesterday),
-        }
+        };
     }
 
     const weekdays = getNearestWeekdays();
