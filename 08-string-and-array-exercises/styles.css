@@ -1,0 +1,13 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.console li {
+    padding-left: 8px;
+    ;
+}
+
+.console li::marker {
+    content: "⮞";
+    color: lightslategray;
+}

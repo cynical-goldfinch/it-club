@@ -5,3 +5,4 @@
   * Bonus: [the same done by ChatGPT](https://cynical-goldfinch.github.io/it-club/03-frontend-guide/styled-by-ai.html)
 * Lesson 6 homework: [Drawing with JS](https://cynical-goldfinch.github.io/it-club/06-pretty-circles/)
 * Lesson 7 homework: [JS Screensaver](https://cynical-goldfinch.github.io/it-club/07-screensaver/)
+* Lesson 8 homework: [String and array exercises](https://cynical-goldfinch.github.io/it-club/08-string-and-array-exercises/)
