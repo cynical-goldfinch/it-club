@@ -287,11 +287,11 @@ const exercise16 = () => {
         tomorrow.setDate(today.getDate() + 1)
 
         const toWeekdayString = date => date.toLocaleDateString('ru-RU', { weekday: 'short' });
-        return [
-            toWeekdayString(yesterday),
-            toWeekdayString(today),
-            toWeekdayString(tomorrow)
-        ]
+        return {
+            next: toWeekdayString(tomorrow),
+            curr: toWeekdayString(today),
+            prev: toWeekdayString(yesterday),
+        }
     }
 
     const weekdays = getNearestWeekdays();
