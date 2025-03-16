@@ -221,7 +221,7 @@ const exercise13 = () => {
         const output = findZodiac(date);
         log(`Знак зодиака для даты ${date.toLocaleDateString('ru-RU', { dateStyle: 'long' })}`, output);
     }
-    process(new Date('1970-03-18'));
+    process(new Date('1970-03-17'));
     process(new Date('2012-11-22'));
     process(new Date('2025-08-22'));
     process(new Date('2025-01-01'));
