@@ -1,0 +1,24 @@
+body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(rgb(152, 192, 212), lightgrey);
+    position: relative;
+}
+
+.box {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 200px;
+    background-color: lightseagreen;
+    border-color: dimgray;
+    border-style: dashed;
+    border-width: 4px;
+}
+
+.box.top {
+    border-color: black;
+    border-style: solid;
+    border-width: 4px;
+}
