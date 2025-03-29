@@ -12,7 +12,7 @@ body {
     width: 200px;
     height: 200px;
     background-color: lightseagreen;
-    border-color: dimgray;
+    border-color: darkslategrey;
     border-style: dashed;
     border-width: 4px;
 }
@@ -21,4 +21,25 @@ body {
     border-color: black;
     border-style: solid;
     border-width: 4px;
+}
+
+.flip {
+    animation-name: flip;
+    animation-duration: 1s;
+    animation-timing-function: ease;
+    animation-iteration-count: 1;
+}
+
+@keyframes flip {
+    0% {
+        transform: rotateY(0deg);
+    }
+
+    50% {
+        transform: rotateY(180deg);
+    }
+
+    100% {
+        transform: rotateY(0deg);
+    }
 }
