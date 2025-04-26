@@ -1,19 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Breaker game</title>
     <link rel="stylesheet" href="style.css">
+    <script src="logger.js" defer></script>
     <script src="canvas.js" defer></script>
     <script src="script.js" defer></script>
+    <script src="utils.js" defer></script>
 </head>
+
 <body>
-    <div id="controls">
-        <button type="button" onclick="onPauseButtonClick()">Pause</button>
+    <div class="page-container">
+        <div class="controls">
+            <button type="button" onclick="onPauseButtonClick()">Pause</button>
+            <div id="coords"></div>
+        </div>
+        <div id="canvas-wrapper" onmousemove="onMouseMove(event)">
+            <canvas id="canvas"></canvas>
+        </div>
     </div>
-    <div id="canvas-wrapper">
-        <canvas id="canvas"></canvas>
-    </div>    
 </body>
+
 </html>
