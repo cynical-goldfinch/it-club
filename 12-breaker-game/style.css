@@ -1,0 +1,15 @@
+body {
+    margin: 0;
+    background-color: rgb(34, 34, 34);
+}
+
+#canvas-wrapper {
+    width: calc(100vw - 20px);
+    height: calc(100vh - 20px);
+    margin: 10px;
+}
+
+#canvas {
+    width: 100%;
+    height: 100%;
+}
