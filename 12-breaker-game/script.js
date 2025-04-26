@@ -5,11 +5,13 @@ const boxRowCount = 10;
 const pixelCountX = Math.floor(canvasWidth / pixelSize);
 const pixelCountY = Math.floor(canvasHeight / pixelSize);
 
+// console.log('Bounds', pixelCountX, pixelCountY);
+
 const boxes = Array(pixelCountX).fill(undefined, 0)
     .map(_ => Array(pixelCountY).fill(false, 0));
-let ballCoords = { x: 0, y: pixelCountY }; 1
-let ballVelocity = { x: 1, y: 1 };
-
+let ballCoords = { x: 0, y: pixelCountY - 1 };
+let ballVelocity = { x: 1, y: -1 };
+let intervalHandle = undefined;
 
 const moveCoords = (coords, velocity) => {
     return {
@@ -18,33 +20,42 @@ const moveCoords = (coords, velocity) => {
     }
 }
 
-const hasBox = ({ x, y }) => {
-    if (
-        x < 0
+const outOfBounds = (x, y) => {
+    return x < 0
         || y < 0
         || x >= pixelCountX
         || y >= pixelCountY
-    ) {
-        return false;
+}
+
+const hasBoxOrWall = ({ x, y }) => {
+    if (outOfBounds(x, y)) {
+        return true;
     }
     return boxes[x][y];
 }
 
 const destroyBox = ({ x, y }) => {
-    boxes[x][y] = false;
+    if (!outOfBounds(x, y)) {
+        boxes[x][y] = false;
+    }
 }
 
 const initBoxes = () => {
     boxes.forEach(column => column.fill(true, 0, boxRowCount));
 };
 
-const drawPixel = ({ x, y }) => {
+const drawPixel = ({ x, y }, color = { h: 0, s: 100, l: 50 }) => {
     drawRect(
         x * pixelSize + 1,
         y * pixelSize + 1,
         pixelSize - 2,
-        pixelSize - 2
+        pixelSize - 2,
+        color
     );
+}
+
+const drawBall = (ballCoords) => {
+    drawPixel(ballCoords, { h: 237, s: 100, l: 65 });
 }
 
 const drawBoxes = () => {
@@ -62,28 +73,20 @@ const moveBall = () => {
     const verticalNeighbourCoords = moveCoords(ballCoords, { x: 0, y: ballVelocity.y });
     const horizontalNeighbourCoords = moveCoords(ballCoords, { x: ballVelocity.x, y: 0 });
 
-    if (diagonalNeighbourCoords.x > pixelCountX - 1) {
-        ballVelocity.x = -1;
-    } else if (diagonalNeighbourCoords.x < 0) {
-        ballVelocity.x = 1;
-    }
+    // console.log('Current ball state', ballCoords, ballVelocity);
+    // console.log('Relevant locations', diagonalNeighbourCoords, verticalNeighbourCoords, horizontalNeighbourCoords);
+    // console.log('Boxes presence', hasBoxOrWall(diagonalNeighbourCoords), hasBoxOrWall(verticalNeighbourCoords), hasBoxOrWall(horizontalNeighbourCoords));
 
-    if (diagonalNeighbourCoords.y > pixelCountY - 1) {
-        ballVelocity.y = -1;
-    } else if (diagonalNeighbourCoords.y < 0) {
-        ballVelocity.y = 1;
-    }
-
-    if (hasBox(horizontalNeighbourCoords) || hasBox(verticalNeighbourCoords)) {
-        if (hasBox(horizontalNeighbourCoords)) {
+    if (hasBoxOrWall(horizontalNeighbourCoords) || hasBoxOrWall(verticalNeighbourCoords)) {
+        if (hasBoxOrWall(horizontalNeighbourCoords)) {
             ballVelocity.x = -ballVelocity.x;
             destroyBox(horizontalNeighbourCoords)
         }
-        if (hasBox(verticalNeighbourCoords)) {
+        if (hasBoxOrWall(verticalNeighbourCoords)) {
             ballVelocity.y = -ballVelocity.y;
             destroyBox(verticalNeighbourCoords)
         }
-    } else if (hasBox(diagonalNeighbourCoords)) {
+    } else if (hasBoxOrWall(diagonalNeighbourCoords)) {
         ballVelocity.x = -ballVelocity.x;
         ballVelocity.y = -ballVelocity.y;
         destroyBox(diagonalNeighbourCoords);
@@ -95,9 +98,24 @@ const moveBall = () => {
 const onInterval = () => {
     clear();
     moveBall();
-    drawPixel(ballCoords);
+    drawBall(ballCoords);
     drawBoxes();
 }
 
+const pauseGame = () => {
+    clearInterval(intervalHandle);
+    intervalHandle = undefined;
+}
+
+const continueGame = () => {
+    intervalHandle = setInterval(onInterval, intervalDuration);
+}
+
+const onPauseButtonClick = () => {
+    intervalHandle == undefined
+        ? continueGame()
+        : pauseGame();
+}
+
 initBoxes();
-setInterval(onInterval, intervalDuration);
+intervalHandle = setInterval(onInterval, intervalDuration);
