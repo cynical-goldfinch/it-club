@@ -1,0 +1,24 @@
+.login_inputGroup {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 10px 0;
+}
+
+.login_inputGroup_label {}
+
+.login_inputGroup_input {
+    background-color: #fff7;
+    border: 1px solid #777b;
+    border-radius: 4px;
+}
+
+.login_buttonGroup {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.login_buttonGroup_button {
+    border-radius: 4px;
+}

@@ -1,0 +1,33 @@
+.modal {
+    width: 300px;
+    min-height: 200px;
+    background-color: yellowgreen;
+    border: 2px solid #333;
+    border-radius: 16px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal_header {
+    width: 100%;
+    border-bottom: 2px solid #333;
+    display: grid;
+    grid-template-columns: 1fr auto;
+}
+
+.modal_header_title {}
+
+.modal_header_closeButton {
+    width: 20px;
+    height: 20px;
+    background: rgb(3, 90, 75);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.modal_content {
+    width: 100%;
+    flex-grow: 1;
+}
