@@ -15,6 +15,11 @@
 
         <p class="intro">A list of users. The colour of the circular avatar and the initials inside are to be generated from the username using JavaScript.</p>
 
+        <form id="addUserForm" class="add-user" aria-label="Add user">
+            <input id="usernameInput" name="username" type="text" aria-label="Username" placeholder="Add username (e.g. jane.doe)" required minlength="1" />
+            <button type="submit">Add</button>
+        </form>
+
         <ul class="user-list" id="userList">
             <li class="user-item">
                 <div class="avatar" data-username="alice.wonder">AW</div><span class="username">alice.wonder</span>
