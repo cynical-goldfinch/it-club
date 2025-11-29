@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>User avatar generation</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <main class="container">
+        <h1>User avatar generation</h1>
+
+        <p class="intro">A list of users. The colour of the circular avatar and the initials inside are to be generated from the username using JavaScript.</p>
+
+        <form id="addUserForm" class="add-user" aria-label="Add user">
+            <input id="usernameInput" name="username" type="text" aria-label="Username" placeholder="Add username (e.g. jane.doe)" required minlength="1" />
+            <button type="submit">Add</button>
+        </form>
+
+        <ul class="user-list" id="userList">
+            <li class="user-item">
+                <div class="avatar" data-username="alice.wonder">AW</div><span class="username">alice.wonder</span>
+            </li>
+            <li class="user-item">
+                <div class="avatar" data-username="bob_the_builder"></div><span class="username">bob_the_builder</span>
+            </li>
+            <li class="user-item">
+                <div class="avatar" data-username="charlie99"></div><span class="username">charlie99</span>
+            </li>
+            <li class="user-item">
+                <div class="avatar" data-username="dana.s"></div><span class="username">dana.s</span>
+            </li>
+            <li class="user-item">
+                <div class="avatar" data-username="Élodie"></div><span class="username">Élodie</span>
+            </li>
+            <li class="user-item">
+                <div class="avatar" data-username="frank"></div><span class="username">frank</span>
+            </li>
+            <li class="user-item">
+                <div class="avatar" data-username="g_harris"></div><span class="username">g_harris</span>
+            </li>
+            <li class="user-item">
+                <div class="avatar" data-username="ivy"></div><span class="username">ivy</span>
+            </li>
+            <li class="user-item">
+                <div class="avatar" data-username="jonathan-smith"></div><span class="username">jonathan-smith</span>
+            </li>
+            <li class="user-item">
+                <div class="avatar" data-username="kate"></div><span class="username">kate</span>
+            </li>
+        </ul>
+
+    </main>
+
+</body>
+
+</html>
