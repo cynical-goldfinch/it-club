@@ -83,13 +83,13 @@ function calculateInitials(username) {
 
 function enhanceAvatars() {
     const avatars = document.querySelectorAll('.avatar');
-    avatars.forEach(av => {
-        const username = av.dataset.username || av.nextElementSibling?.textContent || '';
+    for (const avatar of avatars) {
+        const username = avatar.dataset.username || avatar.nextElementSibling?.textContent || '';
         const initials = calculateInitials(username);
-        av.textContent = initials;
+        avatar.textContent = initials;
         const color = convertUsernameToCssColor(username);
-        av.style.background = color;
-    });
+        avatar.style.background = color;
+    }
 }
 
 function addUser(username) {
